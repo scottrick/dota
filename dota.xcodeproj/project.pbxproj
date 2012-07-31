@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E8D13D5215C8885900185712 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D13D5115C8885900185712 /* UIKit.framework */; };
+		E8D13D5415C8885900185712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D13D5315C8885900185712 /* Foundation.framework */; };
+		E8D13D5615C8885900185712 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D13D5515C8885900185712 /* CoreGraphics.framework */; };
+		E8D13D5C15C8885900185712 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D13D5A15C8885900185712 /* InfoPlist.strings */; };
+		E8D13D5E15C8885900185712 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D13D5D15C8885900185712 /* main.m */; };
+		E8D13D6215C8885900185712 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D13D6115C8885900185712 /* AppDelegate.m */; };
+		E8FD8E1A15C88949002D99A6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FD8E1815C88949002D99A6 /* TestViewController.m */; };
+		E8FD8E1B15C88949002D99A6 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FD8E1915C88949002D99A6 /* TestViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E8D13D4D15C8885900185712 /* dota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dota.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D13D5115C8885900185712 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E8D13D5315C8885900185712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E8D13D5515C8885900185712 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E8D13D5915C8885900185712 /* dota-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dota-Info.plist"; sourceTree = "<group>"; };
+		E8D13D5B15C8885900185712 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8D13D5D15C8885900185712 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8D13D5F15C8885900185712 /* dota-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dota-Prefix.pch"; sourceTree = "<group>"; };
+		E8D13D6015C8885900185712 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E8D13D6115C8885900185712 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E8FD8E1715C88949002D99A6 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		E8FD8E1815C88949002D99A6 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		E8FD8E1915C88949002D99A6 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		E8FD8E1E15C88ADD002D99A6 /* def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = def.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8D13D4A15C8885900185712 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D13D5215C8885900185712 /* UIKit.framework in Frameworks */,
+				E8D13D5415C8885900185712 /* Foundation.framework in Frameworks */,
+				E8D13D5615C8885900185712 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8D13D4215C8885900185712 = {
+			isa = PBXGroup;
+			children = (
+				E8D13D5715C8885900185712 /* dota */,
+				E8D13D5015C8885900185712 /* Frameworks */,
+				E8D13D4E15C8885900185712 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8D13D4E15C8885900185712 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D13D4D15C8885900185712 /* dota.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D13D5015C8885900185712 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8D13D5115C8885900185712 /* UIKit.framework */,
+				E8D13D5315C8885900185712 /* Foundation.framework */,
+				E8D13D5515C8885900185712 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8D13D5715C8885900185712 /* dota */ = {
+			isa = PBXGroup;
+			children = (
+				E8D13D5815C8885900185712 /* Supporting Files */,
+				E8D13D6015C8885900185712 /* AppDelegate.h */,
+				E8D13D6115C8885900185712 /* AppDelegate.m */,
+				E8FD8E1715C88949002D99A6 /* TestViewController.h */,
+				E8FD8E1815C88949002D99A6 /* TestViewController.m */,
+				E8FD8E1915C88949002D99A6 /* TestViewController.xib */,
+				E8FD8E1E15C88ADD002D99A6 /* def.h */,
+			);
+			path = dota;
+			sourceTree = "<group>";
+		};
+		E8D13D5815C8885900185712 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8D13D5915C8885900185712 /* dota-Info.plist */,
+				E8D13D5A15C8885900185712 /* InfoPlist.strings */,
+				E8D13D5D15C8885900185712 /* main.m */,
+				E8D13D5F15C8885900185712 /* dota-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8D13D4C15C8885900185712 /* dota */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D13D6515C8885900185712 /* Build configuration list for PBXNativeTarget "dota" */;
+			buildPhases = (
+				E8D13D4915C8885900185712 /* Sources */,
+				E8D13D4A15C8885900185712 /* Frameworks */,
+				E8D13D4B15C8885900185712 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dota;
+			productName = dota;
+			productReference = E8D13D4D15C8885900185712 /* dota.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D13D4415C8885900185712 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Scott Atkins";
+			};
+			buildConfigurationList = E8D13D4715C8885900185712 /* Build configuration list for PBXProject "dota" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8D13D4215C8885900185712;
+			productRefGroup = E8D13D4E15C8885900185712 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8D13D4C15C8885900185712 /* dota */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8D13D4B15C8885900185712 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D13D5C15C8885900185712 /* InfoPlist.strings in Resources */,
+				E8FD8E1B15C88949002D99A6 /* TestViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8D13D4915C8885900185712 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D13D5E15C8885900185712 /* main.m in Sources */,
+				E8D13D6215C8885900185712 /* AppDelegate.m in Sources */,
+				E8FD8E1A15C88949002D99A6 /* TestViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E8D13D5A15C8885900185712 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D13D5B15C8885900185712 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8D13D6315C8885900185712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E8D13D6415C8885900185712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E8D13D6615C8885900185712 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dota/dota-Prefix.pch";
+				INFOPLIST_FILE = "dota/dota-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E8D13D6715C8885900185712 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dota/dota-Prefix.pch";
+				INFOPLIST_FILE = "dota/dota-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8D13D4715C8885900185712 /* Build configuration list for PBXProject "dota" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D13D6315C8885900185712 /* Debug */,
+				E8D13D6415C8885900185712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D13D6515C8885900185712 /* Build configuration list for PBXNativeTarget "dota" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D13D6615C8885900185712 /* Debug */,
+				E8D13D6715C8885900185712 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8D13D4415C8885900185712 /* Project object */;
+}
