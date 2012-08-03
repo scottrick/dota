@@ -1,1 +1,9 @@
-Readme!
+Dota2 iPhone/iPad Game Viewer
+
+-----------------------------
+
+GOALS:
+
+- Search for a player by name on steam, and view their general game stats.
+- Look through a player's game list and view any particular game's stats.
+- Save a list of players so you don't have to search everytime.
