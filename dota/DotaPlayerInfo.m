@@ -8,6 +8,7 @@
 
 #import "DotaPlayerInfo.h"
 
+#import "def.h"
 #import "SteamPlayerInfo.h"
 
 @implementation DotaPlayerInfo
@@ -19,9 +20,22 @@
     if (self)
     {
         self.steamInfo = [[SteamPlayerInfo alloc] init];
+        
+        [self setDotaId:60170504]; //test!
     }
     
     return self;
+}
+
+- (void) setDotaId:(int)newId
+{
+    int64_t newSteamId = STEAM_ACCOUNT_HIGH_PART + (int64_t)newId;
+    self.steamInfo.steamId = newSteamId;
+}
+
+- (int) getDotaId
+{
+    return self.steamInfo.steamId & 0x00000000ffffffff;
 }
 
 @end

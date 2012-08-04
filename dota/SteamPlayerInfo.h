@@ -11,5 +11,6 @@
 @interface SteamPlayerInfo : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) int64_t steamId;
 
 @end

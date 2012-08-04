@@ -14,4 +14,7 @@
 
 @property (nonatomic, strong) SteamPlayerInfo *steamInfo;
 
+- (void) setDotaId:(int)newId;
+- (int) dotaId;
+
 @end

@@ -10,6 +10,7 @@
 
 #import "def.h"
 #import "DotaPlayerInfo.h"
+#import "SteamPlayerInfo.h"
 #import "Utility.h"
 
 @interface PlayerListViewController ()
@@ -36,10 +37,9 @@
 {
     NSString *nameString = [Utility urlencode:@"Dr. Zaius"];
     NSString *urlString = [NSString stringWithFormat:DOTA_MATCH_PLAYER_REQUEST_STRING, STEAM_DEV_KEY, nameString];
-//    NSString *urlString = [NSString stringWithFormat:DOTA_MATCH_REQUEST_STRING, STEAM_DEV_KEY];
     NSURL *url = [NSURL URLWithString:urlString];
 
-    printf("%s\n", url.description.UTF8String);
+//    printf("%s\n", url.description.UTF8String);
     
     //do this stuff in the background, so we don't lock up the phone
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
