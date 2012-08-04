@@ -7,17 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8B2D74615CC8F1300BDDB34 /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */; };
+		E8B2D74B15CC8F8A00BDDB34 /* SteamPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74A15CC8F8A00BDDB34 /* SteamPlayerInfo.m */; };
+		E8B2D74E15CC90A200BDDB34 /* DotaPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74D15CC90A200BDDB34 /* DotaPlayerInfo.m */; };
+		E8B2D75115CC967A00BDDB34 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D75015CC967A00BDDB34 /* Utility.m */; };
 		E8D13D5215C8885900185712 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D13D5115C8885900185712 /* UIKit.framework */; };
 		E8D13D5415C8885900185712 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D13D5315C8885900185712 /* Foundation.framework */; };
 		E8D13D5615C8885900185712 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D13D5515C8885900185712 /* CoreGraphics.framework */; };
 		E8D13D5C15C8885900185712 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D13D5A15C8885900185712 /* InfoPlist.strings */; };
 		E8D13D5E15C8885900185712 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D13D5D15C8885900185712 /* main.m */; };
 		E8D13D6215C8885900185712 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D13D6115C8885900185712 /* AppDelegate.m */; };
-		E8FD8E1A15C88949002D99A6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FD8E1815C88949002D99A6 /* TestViewController.m */; };
-		E8FD8E1B15C88949002D99A6 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8FD8E1915C88949002D99A6 /* TestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8B2D74415CC8F1300BDDB34 /* PlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
+		E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
+		E8B2D74915CC8F8A00BDDB34 /* SteamPlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteamPlayerInfo.h; sourceTree = "<group>"; };
+		E8B2D74A15CC8F8A00BDDB34 /* SteamPlayerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SteamPlayerInfo.m; sourceTree = "<group>"; };
+		E8B2D74C15CC90A200BDDB34 /* DotaPlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotaPlayerInfo.h; sourceTree = "<group>"; };
+		E8B2D74D15CC90A200BDDB34 /* DotaPlayerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaPlayerInfo.m; sourceTree = "<group>"; };
+		E8B2D74F15CC967A00BDDB34 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		E8B2D75015CC967A00BDDB34 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		E8D13D4D15C8885900185712 /* dota.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dota.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D13D5115C8885900185712 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E8D13D5315C8885900185712 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -28,9 +38,6 @@
 		E8D13D5F15C8885900185712 /* dota-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dota-Prefix.pch"; sourceTree = "<group>"; };
 		E8D13D6015C8885900185712 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8D13D6115C8885900185712 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E8FD8E1715C88949002D99A6 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
-		E8FD8E1815C88949002D99A6 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		E8FD8E1915C88949002D99A6 /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		E8FD8E1E15C88ADD002D99A6 /* def.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = def.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +55,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8B2D74815CC8F7C00BDDB34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8B2D74C15CC90A200BDDB34 /* DotaPlayerInfo.h */,
+				E8B2D74D15CC90A200BDDB34 /* DotaPlayerInfo.m */,
+				E8B2D74915CC8F8A00BDDB34 /* SteamPlayerInfo.h */,
+				E8B2D74A15CC8F8A00BDDB34 /* SteamPlayerInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		E8D13D4215C8885900185712 = {
 			isa = PBXGroup;
 			children = (
@@ -78,13 +96,15 @@
 		E8D13D5715C8885900185712 /* dota */ = {
 			isa = PBXGroup;
 			children = (
+				E8B2D74815CC8F7C00BDDB34 /* Model */,
 				E8D13D5815C8885900185712 /* Supporting Files */,
 				E8D13D6015C8885900185712 /* AppDelegate.h */,
 				E8D13D6115C8885900185712 /* AppDelegate.m */,
-				E8FD8E1715C88949002D99A6 /* TestViewController.h */,
-				E8FD8E1815C88949002D99A6 /* TestViewController.m */,
-				E8FD8E1915C88949002D99A6 /* TestViewController.xib */,
 				E8FD8E1E15C88ADD002D99A6 /* def.h */,
+				E8B2D74415CC8F1300BDDB34 /* PlayerListViewController.h */,
+				E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */,
+				E8B2D74F15CC967A00BDDB34 /* Utility.h */,
+				E8B2D75015CC967A00BDDB34 /* Utility.m */,
 			);
 			path = dota;
 			sourceTree = "<group>";
@@ -152,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D13D5C15C8885900185712 /* InfoPlist.strings in Resources */,
-				E8FD8E1B15C88949002D99A6 /* TestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +184,10 @@
 			files = (
 				E8D13D5E15C8885900185712 /* main.m in Sources */,
 				E8D13D6215C8885900185712 /* AppDelegate.m in Sources */,
-				E8FD8E1A15C88949002D99A6 /* TestViewController.m in Sources */,
+				E8B2D74615CC8F1300BDDB34 /* PlayerListViewController.m in Sources */,
+				E8B2D74B15CC8F8A00BDDB34 /* SteamPlayerInfo.m in Sources */,
+				E8B2D74E15CC90A200BDDB34 /* DotaPlayerInfo.m in Sources */,
+				E8B2D75115CC967A00BDDB34 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

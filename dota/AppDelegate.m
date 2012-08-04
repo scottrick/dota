@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "TestViewController.h"
+#import "PlayerListViewController.h"
 
 @implementation AppDelegate
 
@@ -16,8 +16,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [self setTestController:[[TestViewController alloc] init]];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.testController];
+    PlayerListViewController *playerListController = [[PlayerListViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:playerListController];
     [navController.navigationBar setTintColor:[UIColor blackColor]];
     
     [self.window setRootViewController:navController];

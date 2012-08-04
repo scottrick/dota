@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class TestViewController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) TestViewController *testController;
 
 @end

@@ -11,7 +11,8 @@
 
 #define DOTA_APP_MAIN_TITLE @"Dota2 Stats"
 
-#define DOTA_MATCH_REQUEST_STRING @"https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key="
+#define DOTA_MATCH_REQUEST_STRING @"https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=%@"
+#define DOTA_MATCH_PLAYER_REQUEST_STRING @"https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?key=%@&player_name=%@"
 
 #define STEAM_DEV_KEY @"B3A7049A360B80408EEC3A9D97153AAF"
 
