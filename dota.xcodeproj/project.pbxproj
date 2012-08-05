@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E8AFC87615CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC87515CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m */; };
 		E8AFC87C15CF041B00D9EDBE /* recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = E8AFC87B15CF041B00D9EDBE /* recipe.png */; };
+		E8AFC88015CF184900D9EDBE /* DotaPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC87E15CF184900D9EDBE /* DotaPlayerViewController.m */; };
+		E8AFC88115CF184900D9EDBE /* DotaPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8AFC87F15CF184900D9EDBE /* DotaPlayerViewController.xib */; };
 		E8B2D74615CC8F1300BDDB34 /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */; };
 		E8B2D74B15CC8F8A00BDDB34 /* SteamPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74A15CC8F8A00BDDB34 /* SteamPlayerInfo.m */; };
 		E8B2D74E15CC90A200BDDB34 /* DotaPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74D15CC90A200BDDB34 /* DotaPlayerInfo.m */; };
@@ -25,6 +27,9 @@
 		E8AFC87415CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotaPlayerSummaryTableViewCell.h; sourceTree = "<group>"; };
 		E8AFC87515CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaPlayerSummaryTableViewCell.m; sourceTree = "<group>"; };
 		E8AFC87B15CF041B00D9EDBE /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recipe.png; path = images/recipe.png; sourceTree = "<group>"; };
+		E8AFC87D15CF184900D9EDBE /* DotaPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotaPlayerViewController.h; sourceTree = "<group>"; };
+		E8AFC87E15CF184900D9EDBE /* DotaPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaPlayerViewController.m; sourceTree = "<group>"; };
+		E8AFC87F15CF184900D9EDBE /* DotaPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DotaPlayerViewController.xib; sourceTree = "<group>"; };
 		E8B2D74415CC8F1300BDDB34 /* PlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
 		E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
 		E8B2D74915CC8F8A00BDDB34 /* SteamPlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteamPlayerInfo.h; sourceTree = "<group>"; };
@@ -72,6 +77,9 @@
 		E8AFC87915CEFE9700D9EDBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E8AFC87D15CF184900D9EDBE /* DotaPlayerViewController.h */,
+				E8AFC87E15CF184900D9EDBE /* DotaPlayerViewController.m */,
+				E8AFC87F15CF184900D9EDBE /* DotaPlayerViewController.xib */,
 				E8B2D74415CC8F1300BDDB34 /* PlayerListViewController.h */,
 				E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */,
 			);
@@ -205,6 +213,7 @@
 			files = (
 				E8D13D5C15C8885900185712 /* InfoPlist.strings in Resources */,
 				E8AFC87C15CF041B00D9EDBE /* recipe.png in Resources */,
+				E8AFC88115CF184900D9EDBE /* DotaPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +231,7 @@
 				E8B2D74E15CC90A200BDDB34 /* DotaPlayerInfo.m in Sources */,
 				E8B2D75115CC967A00BDDB34 /* Utility.m in Sources */,
 				E8AFC87615CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m in Sources */,
+				E8AFC88015CF184900D9EDBE /* DotaPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

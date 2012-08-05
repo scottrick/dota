@@ -13,6 +13,12 @@
 
 #define NAME_KEY @"personaname"
 #define AVATAR_FULL_KEY @"avatarfull"
+#define LAST_LOGGED_ON_KEY @"lastlogoff"
+#define PERSONA_STATE_KEY @"personastate"
+
+#define SECONDS_IN_A_MINUTE 60
+#define SECONDS_IN_AN_HOUR (60 * 60)
+#define SECONDS_IN_A_DAY (60 * 60 * 24)
 
 @interface SteamPlayerInfo ()
 
@@ -136,6 +142,69 @@
     else
     {
         return [NSString stringWithFormat:@"%lld", _steamId];
+    }
+}
+
+- (NSString *) status
+{
+    switch (self.state)
+    {
+        case SteamPlayerState_Offline:
+        {
+            NSTimeInterval timeSinceLoggedIn = [[NSDate date] timeIntervalSince1970] - [[_data objectForKey:LAST_LOGGED_ON_KEY] doubleValue];
+            
+            int time = (int)timeSinceLoggedIn;
+            int days = time / SECONDS_IN_A_DAY;
+            time -= (days * SECONDS_IN_A_DAY);
+            
+            int hours = time / SECONDS_IN_AN_HOUR;
+            time -= (hours * SECONDS_IN_AN_HOUR);
+            
+            int minutes = time / SECONDS_IN_A_MINUTE;
+
+            if (days)
+            {
+                return [NSString stringWithFormat:@"Last logged in %d days, %d hours and %d minutes ago.", days, hours, minutes];
+            }
+            else if (hours)
+            {
+                return [NSString stringWithFormat:@"Last logged in %d hours and %d minutes ago.", hours, minutes];
+            }
+            else
+            {
+                return [NSString stringWithFormat:@"Last logged in %d minutes ago.", minutes];
+            }
+        }
+            break;
+            
+        case SteamPlayerState_Away:
+            return @"Online (Away)";
+        case SteamPlayerState_Busy:
+            return @"Online (Busy)";
+        case SteamPlayerState_LookingToPlay:
+            return @"Online (Looking To Play)";
+        case SteamPlayerState_LookingToTrade:
+            return @"Online (Looking To Trae)";
+        case SteamPlayerState_Online:
+            return @"Online";
+        case SteamPlayerState_Snooze:
+            return @"Online (Snooze)";
+            
+        case SteamPlayerState_Unknown:
+        default:
+            return nil;
+    }
+}
+
+- (enum SteamPlayerState) state
+{
+    if (_data)
+    {
+        return (enum SteamPlayerState) [[_data objectForKey:PERSONA_STATE_KEY] intValue];
+    }
+    else
+    {
+        return SteamPlayerState_Unknown;
     }
 }
 

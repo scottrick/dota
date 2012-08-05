@@ -11,6 +11,7 @@
 #import "def.h"
 #import "DotaPlayerInfo.h"
 #import "DotaPlayerSummaryTableViewCell.h"
+#import "DotaPlayerViewController.h"
 #import "SteamPlayerInfo.h"
 #import "Utility.h"
 
@@ -121,7 +122,7 @@
 
 - (NSString *) title
 {
-    return @"Dota2 Players";
+    return @"Players";
 }
 
 - (void) viewDidLoad
@@ -161,7 +162,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *CellIdentifier = @"PLAYER_CELL";
     DotaPlayerSummaryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DOTA_PLAYER_SUMMARY_REUSE_IDENTIFIER];
     
     if (!cell)
@@ -169,7 +169,7 @@
         cell = [[DotaPlayerSummaryTableViewCell alloc] initWithDotaPlayerInfo:[self.players objectAtIndex:indexPath.row]];
     }
     
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -217,13 +217,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //push the player summary view controller
+    DotaPlayerViewController *playerController = [[DotaPlayerViewController alloc] initWithDotaPlayerInfo:[_players objectAtIndex:indexPath.row]];
+    
+    [self.navigationController pushViewController:playerController animated:YES];
 }
 
 @end
