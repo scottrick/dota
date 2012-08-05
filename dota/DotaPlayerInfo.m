@@ -13,42 +13,44 @@
 
 @implementation DotaPlayerInfo
 
-- (id) init
-{
-    self = [super init];
-    
-    if (self)
-    {
-        self.steamInfo = [[SteamPlayerInfo alloc] init];
-    }
-    
-    return self;
-}
-
 - (id) initWithDotaId:(int)newId
 {
     self = [super init];
     
     if (self)
     {
-        self.steamInfo = [[SteamPlayerInfo alloc] init];
-        self.dotaId = newId;
+        _steamInfo = [[SteamPlayerInfo alloc] initWithSteamId:[DotaPlayerInfo steamAccountIdFromDotaId:newId]];
     }
     
     return self;
 }
 
-- (void) setDotaId:(int)newId
+- (id) initWithSteamInfo:(SteamPlayerInfo *)steamInfo
 {
-    int64_t newSteamId = STEAM_ACCOUNT_HIGH_PART + (int64_t)newId;
+    self = [super init];
     
-//    printf("setting dotaId to  %d,  %lld\n", newId, newSteamId);
-    self.steamInfo.steamId = newSteamId;
+    if (self)
+    {
+        _steamInfo = steamInfo;
+    }
+    
+    return self;
+}
+
++ (int) dotaAccountIdFromSteamId:(int64_t)steamId
+{
+    return steamId & 0x00000000ffffffff;
+}
+
++ (int64_t) steamAccountIdFromDotaId:(int)dotaId
+{
+    int64_t steamId = STEAM_ACCOUNT_HIGH_PART + (int64_t)dotaId;
+    return steamId;
 }
 
 - (int) dotaId
 {
-    return self.steamInfo.steamId & 0x00000000ffffffff;
+    return [DotaPlayerInfo dotaAccountIdFromSteamId:self.steamInfo.steamId];
 }
 
 @end

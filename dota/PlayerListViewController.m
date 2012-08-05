@@ -10,6 +10,7 @@
 
 #import "def.h"
 #import "DotaPlayerInfo.h"
+#import "DotaPlayerSummaryTableViewCell.h"
 #import "SteamPlayerInfo.h"
 #import "Utility.h"
 
@@ -196,20 +197,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"PLAYER_CELL";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    static NSString *CellIdentifier = @"PLAYER_CELL";
+    DotaPlayerSummaryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DOTA_PLAYER_SUMMARY_REUSE_IDENTIFIER];
     
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, 88.0f)];
-        [cell setBackgroundColor:[UIColor blackColor]];
+        cell = [[DotaPlayerSummaryTableViewCell alloc] initWithDotaPlayerInfo:[self.players objectAtIndex:indexPath.row]];
     }
-    
-    DotaPlayerInfo *info = [self.players objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", info.dotaId];
-    
-    // Configure the cell...
-    
+        
     return cell;
 }
 

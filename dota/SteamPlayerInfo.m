@@ -10,13 +10,13 @@
 
 @implementation SteamPlayerInfo
 
-- (id) init
+- (id) initWithSteamId:(int64_t)newId
 {
     self = [super init];
     
     if (self)
     {
-        self.name = @"hatfatName";
+        _steamId = newId;
     }
     
     return self;

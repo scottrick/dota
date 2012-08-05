@@ -10,7 +10,11 @@
 
 @interface SteamPlayerInfo : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, assign) int64_t steamId;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) UIImage *avatar;
+
+@property (nonatomic, readonly) int64_t steamId;
+
+- (id) initWithSteamId:(int64_t)newId;
 
 @end

@@ -12,9 +12,13 @@
 
 @interface DotaPlayerInfo : NSObject
 
-@property (nonatomic, strong) SteamPlayerInfo *steamInfo;
-@property (nonatomic) int dotaId;
+@property (nonatomic, strong, readonly) SteamPlayerInfo *steamInfo;
+@property (nonatomic, readonly) int dotaId;
 
 - (id) initWithDotaId:(int)newId;
+- (id) initWithSteamInfo:(SteamPlayerInfo *)steamInfo;
+
++ (int) dotaAccountIdFromSteamId:(int64_t)steamId;
++ (int64_t) steamAccountIdFromDotaId:(int)dotaId;
 
 @end
