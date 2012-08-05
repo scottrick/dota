@@ -9,6 +9,7 @@
 #import "DotaPlayerSummaryTableViewCell.h"
 
 #import "DotaPlayerInfo.h"
+#import "SteamPlayerInfo.h"
 
 @implementation DotaPlayerSummaryTableViewCell
 
@@ -26,9 +27,27 @@
 
 - (void) setDotaInfo:(DotaPlayerInfo *)dotaInfo
 {
+    [_dotaInfo.steamInfo removeSteamInfoChangedListener:self];
+    
     _dotaInfo = dotaInfo;
     
-    self.textLabel.text = @"asdfadsf";
+    [_dotaInfo.steamInfo addSteamInfoChangedListener:self];
+
+    [self updateViewWithInfo];
+}
+
+- (void) updateViewWithInfo
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.textLabel.text = self.dotaInfo.steamInfo.name;
+        self.imageView.image = self.dotaInfo.steamInfo.avatarFull;
+        [self layoutSubviews];
+    });
+}
+
+- (void) steamPlayerInfoChanged:(SteamPlayerInfo *)steamInfo
+{
+    [self updateViewWithInfo];
 }
 
 - (void) setSelected:(BOOL)selected animated:(BOOL)animated

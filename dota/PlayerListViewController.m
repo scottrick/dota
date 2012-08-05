@@ -45,39 +45,6 @@
     //do this stuff in the background, so we don't lock up the phone
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         
-        //get our movies
-        NSError *error = nil;
-        NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
-        
-        //parse JSON
-        if (data)
-        {
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            
-            printf("%s\n", json.description.UTF8String);
-        }
-        else
-        {
-            //error getting the data?!?
-            printf("ERROR:  %s\n", error.description.UTF8String);
-        }
-    });
-}
-
-- (void) testStuff2
-{
-//    NSString *nameString = [Utility urlencode:@"Dr. Zaius"];
-    DotaPlayerInfo *dotaInfo = [self.players objectAtIndex:0];
-    
-    NSString *urlString = [NSString stringWithFormat:STEAM_PLAYER_SUMMARY_REQUEST_STRING, STEAM_DEV_KEY, dotaInfo.steamInfo.steamId];
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    printf("%s\n", url.description.UTF8String);
-    
-    //do this stuff in the background, so we don't lock up the phone
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
-        //get our movies
         NSError *error = nil;
         NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
         
@@ -164,9 +131,6 @@
     [self loadPlayerList];
     
 //    [self addDebugDotaInfos];
-
-//    [self testStuff];
-//    [self testStuff2];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -204,7 +168,9 @@
     {
         cell = [[DotaPlayerSummaryTableViewCell alloc] initWithDotaPlayerInfo:[self.players objectAtIndex:indexPath.row]];
     }
-        
+    
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    
     return cell;
 }
 

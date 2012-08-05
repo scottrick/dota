@@ -13,3 +13,11 @@
 + (NSString *) urlencode:(NSString *)input;
 
 @end
+
+
+@interface NSMutableArray (Utility)
+
++ (id)mutableArrayUsingWeakReferences;
++ (id)mutableArrayUsingWeakReferencesWithCapacity:(NSUInteger)capacity;
+
+@end

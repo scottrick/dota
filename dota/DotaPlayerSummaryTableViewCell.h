@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SteamPlayerInfo.h"
+
 #define DOTA_PLAYER_SUMMARY_REUSE_IDENTIFIER @"DotaPlayerSummaryTableViewCell"
 
 @class DotaPlayerInfo;
 
-@interface DotaPlayerSummaryTableViewCell : UITableViewCell
+@interface DotaPlayerSummaryTableViewCell : UITableViewCell<SteamPlayerInfoChangedListener>
 
 @property (nonatomic, strong) DotaPlayerInfo *dotaInfo;
 

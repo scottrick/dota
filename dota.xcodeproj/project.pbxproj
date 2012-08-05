@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E8AFC87615CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8AFC87515CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m */; };
+		E8AFC87C15CF041B00D9EDBE /* recipe.png in Resources */ = {isa = PBXBuildFile; fileRef = E8AFC87B15CF041B00D9EDBE /* recipe.png */; };
 		E8B2D74615CC8F1300BDDB34 /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */; };
 		E8B2D74B15CC8F8A00BDDB34 /* SteamPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74A15CC8F8A00BDDB34 /* SteamPlayerInfo.m */; };
 		E8B2D74E15CC90A200BDDB34 /* DotaPlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B2D74D15CC90A200BDDB34 /* DotaPlayerInfo.m */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		E8AFC87415CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotaPlayerSummaryTableViewCell.h; sourceTree = "<group>"; };
 		E8AFC87515CEFE7E00D9EDBE /* DotaPlayerSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotaPlayerSummaryTableViewCell.m; sourceTree = "<group>"; };
+		E8AFC87B15CF041B00D9EDBE /* recipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recipe.png; path = images/recipe.png; sourceTree = "<group>"; };
 		E8B2D74415CC8F1300BDDB34 /* PlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
 		E8B2D74515CC8F1300BDDB34 /* PlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
 		E8B2D74915CC8F8A00BDDB34 /* SteamPlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteamPlayerInfo.h; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		E8AFC87A15CF040500D9EDBE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E8AFC87B15CF041B00D9EDBE /* recipe.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E8B2D74815CC8F7C00BDDB34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 				E8AFC87915CEFE9700D9EDBE /* Controller */,
 				E8B2D74815CC8F7C00BDDB34 /* Model */,
 				E8AFC87815CEFE8600D9EDBE /* View */,
+				E8AFC87A15CF040500D9EDBE /* Images */,
 				E8D13D5815C8885900185712 /* Supporting Files */,
 				E8D13D6015C8885900185712 /* AppDelegate.h */,
 				E8D13D6115C8885900185712 /* AppDelegate.m */,
@@ -193,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D13D5C15C8885900185712 /* InfoPlist.strings in Resources */,
+				E8AFC87C15CF041B00D9EDBE /* recipe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
