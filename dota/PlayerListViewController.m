@@ -27,7 +27,7 @@
     
     if (self)
     {
-
+        
     }
     
     return self;
@@ -35,11 +35,11 @@
 
 - (void) testStuff
 {
-    NSString *nameString = [Utility urlencode:@"Dr. Zaius"];
-    NSString *urlString = [NSString stringWithFormat:DOTA_MATCH_PLAYER_REQUEST_STRING, STEAM_DEV_KEY, nameString];
+    NSString *nameString = [Utility urlencode:@"Lyle Lanley"];
+    NSString *urlString = [NSString stringWithFormat:DOTA_MATCH_PLAYER_SEARCH_REQUEST_STRING, STEAM_DEV_KEY, nameString];
     NSURL *url = [NSURL URLWithString:urlString];
 
-//    printf("%s\n", url.description.UTF8String);
+    printf("%s\n", url.description.UTF8String);
     
     //do this stuff in the background, so we don't lock up the phone
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
@@ -63,16 +63,92 @@
     });
 }
 
-- (NSArray *) createPlayerList
+- (void) testStuff2
+{
+//    NSString *nameString = [Utility urlencode:@"Dr. Zaius"];
+    DotaPlayerInfo *dotaInfo = [self.players objectAtIndex:0];
+    
+    NSString *urlString = [NSString stringWithFormat:STEAM_PLAYER_SUMMARY_REQUEST_STRING, STEAM_DEV_KEY, dotaInfo.steamInfo.steamId];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    printf("%s\n", url.description.UTF8String);
+    
+    //do this stuff in the background, so we don't lock up the phone
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        //get our movies
+        NSError *error = nil;
+        NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
+        
+        //parse JSON
+        if (data)
+        {
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            
+            printf("%s\n", json.description.UTF8String);
+        }
+        else
+        {
+            //error getting the data?!?
+            printf("ERROR:  %s\n", error.description.UTF8String);
+        }
+    });
+}
+
+- (void) addDebugDotaInfos
 {
     NSMutableArray *newPlayers = [NSMutableArray array];
     
-    for (int i = 0; i < 12; i++)
+    //add test players
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:60170504]]; //Dr. Zaius
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:79749932]]; //Swedish Fish
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:20617955]]; //fatty
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:40110991]]; //FAT_LENNY
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:40452777]]; //Bluth
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:93502328]]; //TunaWater
+    [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:59469598]]; //Lyle Lanley
+
+    self.players = newPlayers;
+    
+    [self savePlayerList];
+}
+
+- (void) loadPlayerList
+{
+    NSArray *playerDotaIds = [NSMutableArray arrayWithContentsOfFile:[PlayerListViewController playerSaveFileString]];
+    NSMutableArray *newPlayers = [NSMutableArray array];
+    
+    for (NSString *newId in playerDotaIds)
     {
-        [newPlayers addObject:[[DotaPlayerInfo alloc] init]];
+        [newPlayers addObject:[[DotaPlayerInfo alloc] initWithDotaId:newId.intValue]];
     }
     
-    return newPlayers;
+    self.players = newPlayers;
+}
+
++ (NSString *) playerSaveFileString
+{
+    //make the path
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"favorite_players"];
+    return fileName;
+}
+
+- (void) savePlayerList
+{
+    //save the LIST
+    NSMutableArray *playerDotaIds = [NSMutableArray array];
+    
+    for (DotaPlayerInfo *info in self.players)
+    {
+        [playerDotaIds addObject:[NSNumber numberWithInt:info.dotaId]];
+    }
+    
+    if (![playerDotaIds writeToFile:[PlayerListViewController playerSaveFileString] atomically:YES])
+    { //error saving
+        NSLog(@"Error saving player id list");
+    }
 }
 
 - (NSString *) title
@@ -83,10 +159,13 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+ 
+    [self loadPlayerList];
     
-    [self testStuff];
-    
-    self.players = [self createPlayerList];
+//    [self addDebugDotaInfos];
+
+//    [self testStuff];
+//    [self testStuff2];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -101,15 +180,33 @@
     return 1;
 }
 
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, 44.0f)];
+    [titleLabel setText:@"SEARCH GOES HERE"];
+    [titleLabel setBackgroundColor:[UIColor orangeColor]];
+    [titleLabel setTextColor:[UIColor purpleColor]];
+    return titleLabel;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.players.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"PLAYER_CELL";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, 88.0f)];
+        [cell setBackgroundColor:[UIColor blackColor]];
+    }
+    
+    DotaPlayerInfo *info = [self.players objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", info.dotaId];
     
     // Configure the cell...
     

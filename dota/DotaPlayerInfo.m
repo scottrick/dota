@@ -20,8 +20,19 @@
     if (self)
     {
         self.steamInfo = [[SteamPlayerInfo alloc] init];
-        
-        [self setDotaId:60170504]; //test!
+    }
+    
+    return self;
+}
+
+- (id) initWithDotaId:(int)newId
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.steamInfo = [[SteamPlayerInfo alloc] init];
+        self.dotaId = newId;
     }
     
     return self;
@@ -30,10 +41,12 @@
 - (void) setDotaId:(int)newId
 {
     int64_t newSteamId = STEAM_ACCOUNT_HIGH_PART + (int64_t)newId;
+    
+//    printf("setting dotaId to  %d,  %lld\n", newId, newSteamId);
     self.steamInfo.steamId = newSteamId;
 }
 
-- (int) getDotaId
+- (int) dotaId
 {
     return self.steamInfo.steamId & 0x00000000ffffffff;
 }
